@@ -10,6 +10,6 @@ begin
   end
 
   Compass::Frameworks.register 'select2-bootstrap', :path => Select2::Bootstrap.base_directory
-rescue
+rescue LoadError
   # We don't need compass
 end
