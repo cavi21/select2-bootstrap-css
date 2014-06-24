@@ -1,11 +1,15 @@
-require 'compass'
+begin
+  require 'compass'
 
-module Select2
-  module Bootstrap
-    def self.base_directory
-      File.expand_path('../../compass', __FILE__)
+  module Select2
+    module Bootstrap
+      def self.base_directory
+        File.expand_path('../../compass', __FILE__)
+      end
     end
   end
-end
 
-Compass::Frameworks.register 'select2-bootstrap', :path => Select2::Bootstrap.base_directory
+  Compass::Frameworks.register 'select2-bootstrap', :path => Select2::Bootstrap.base_directory
+rescue
+  # We don't need compass
+end
